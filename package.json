@@ -1,0 +1,23 @@
+{
+  "name": "reo-todomvc",
+  "version": "1.0.0",
+  "description": "todomvc example for reo",
+  "main": "index.js",
+  "scripts": {
+    "dev": "bili ./src/index.js --watch --compress --format umd -d dist -n todomvc",
+    "gh-pages": "node scripts/gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fengzilong/reo-todomvc.git"
+  },
+  "author": "fengzilong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fengzilong/reo-todomvc/issues"
+  },
+  "homepage": "https://github.com/fengzilong/reo-todomvc#readme",
+  "devDependencies": {
+    "reo": "0.0.4"
+  }
+}
