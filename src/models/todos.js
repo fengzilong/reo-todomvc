@@ -1,12 +1,14 @@
 const todos = JSON.parse( window.localStorage.getItem( 'reo-todos' ) || '[]' );
+const state = {
+	todos,
+	filteredTodos: [],
+	filter: 'all'
+};
+doFilter( state );
 
 export default {
 	name: 'todos',
-	state: {
-		todos,
-		filteredTodos: [],
-		filter: 'all'
-	},
+	state,
 	reducers: {
 		add( state, text ) {
 			state.todos.push( {

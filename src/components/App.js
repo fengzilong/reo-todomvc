@@ -18,8 +18,11 @@ export default {
 			</header>
 
 			<section class="main">
+				{#if todos.length > 0}
 				<input class="toggle-all" type="checkbox" on-click="{ this.dispatch( 'toggleAll' ) }">
 				<label for="toggle-all">Mark all as complete</label>
+				{/if}
+
 				<ul class="todo-list">
 					{#list filteredTodos as todo}
 					<Todo todo="{ todo }"></Todo>
@@ -27,6 +30,7 @@ export default {
 				</ul>
 			</section>
 
+			{#if todos.length > 0}
 			<footer class="footer">
 				<span class="todo-count"><strong>{ leftCount }</strong> item left</span>
 				<ul class="filters">
@@ -42,6 +46,7 @@ export default {
 				</ul>
 				<button class="clear-completed" on-click="{ this.dispatch( 'clearCompleted' ) }">Clear completed</button>
 			</footer>
+			{/if}
 		</section>
 	`,
 	onKeyup( e ) {
