@@ -30,7 +30,8 @@ export default {
 			doFilter( state );
 		},
 		toggleAll( state ) {
-			state.todos.forEach( todo => todo.done = !todo.done );
+			const hasUndo = state.todos.some( todo => !todo.done );
+			state.todos.forEach( todo => todo.done = hasUndo );
 			doFilter( state );
 		},
 		clearCompleted( state ) {

@@ -19,8 +19,8 @@ export default {
 			<input
 				class="edit"
 				value="{ todo.text }"
-				on-blur="{ this.onBlur() }"
-				on-keyup="{ this.onKeyup() }"
+				on-blur="{ this.onBlur( $event ) }"
+				on-keyup="{ this.onKeyup( $event ) }"
 			>
 			{/if}
 		</li>
@@ -30,11 +30,14 @@ export default {
 	},
 	onKeyup( e ) {
 		if ( e.which === 13 ) {
-			this.save( e.target.value );
+			e.target.blur();
 		}
 	},
 	save( value ) {
 		this.data.editing = false;
-		this.dispatch( 'edit', value )
+		this.dispatch( 'edit', {
+			todo: this.data.todo,
+			text: value
+		} );
 	}
 };
