@@ -4,7 +4,7 @@
   "description": "todomvc example for reo",
   "main": "index.js",
   "scripts": {
-    "dev": "bili ./src/index.js --watch --compress --format umd -d dist -n todomvc",
+    "dev": "bili ./src/index.js --watch --compress --format umd -d public -n todomvc",
     "gh-pages": "node scripts/gh-pages"
   },
   "repository": {
